@@ -3,183 +3,183 @@
 
     <item
         is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_c49f8b198323c840224c9713ebba6a58fe24ed6a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c9815af466343139d3ce5743a5a0e5738996b3f1">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_cbcc207c2d4454573284fbf5316d1afd007d5631/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.1_8ca011282f33e1b9a6f795b559d9a76e15796f22/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.1/support-annotations-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.1_35b1ed9dbd5463d60395850dc9181ac1ce780f7a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.1_3c27e1b3fc8df702d79dace85213609a2c4afdb7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.1_d1eb4502b221dcb03ea473043b7b1359500edf9a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.1_4d5a04379282043d78bd72c3784b2ac57f9e88c1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_1fbff8eef0627c8698102a0ea78c6bbe302d3728/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.1_da1b01b01b358498b449aadf2c41bfb40bd43723/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.1_03a2a01cd588c8c112c2d04fa64ee42fcfdd1a6e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f83b00041ecfba705603fec40363416c7de69719">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_38cbed329d9d24de671a5839fda37083a3e9f3ad/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.1_59b85ae78f61796a725cdaa45463968f8920dd35/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.1_3ae41192b60e0a56f50ae1dbee522c6867172191/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.1_b6c3697c53c14dafff7f3d4c1770551b8f5554e5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.1_ff91540bcbbe5556784599b4e21b78b407ea8f7d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_19807be3d531c505eade8803bf8caf76d2573bd5/classes.dex" />
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_b366fe16e4b576cb363240be5d75b730d51a2866\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="ae9e5ef147c3e2871270eee937f3d8b9b1d9cecb">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_dd0b60a99c44d1cdd584bd8e84499dc1320d6851/classes.dex" />
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.0.1_161deef4b9f4f3f965f04dc49dcf1c880c8ea1cc\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_e791fe084720d2b3a8a3d7acf19236965f089e73/classes.dex" />
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_a5ca9cd863262824ec72159ff54fdc086f4ba54b\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="8eb4eb8af5ae78faacfadf0b066b9c2bb9806f73">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_e1cc2eaa90ef920fa1d7735553ce1aa72c287de6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.1_fbb272d932295c4b4b3baf239b1d45c661e469c4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.1_84b80399543b45fcea67e9cffce914473c96f3c8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_d4ea93800fd6dccff067e862f0470b419c378d3d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.1_826171ac3d605dc78d6cb3d942a96c4826c9808e/classes.dex" />
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.1_1b1659148416987e98946a3bf117025481b6ddf0\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_1c8319d3fefddcff7146452594c25fd0aea7b070\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
-        <dex dex="/Users/macbookpro/Downloads/Arith3-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.1_e84a9d83cd9ed94e04ca1410f17c0a781641ae25/classes.dex" />
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.1_6f4b332ab4a956dbea53dd9f5c6b7583f5e36b0c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.1_b9d4021a74413c2c9a10599c1b6051ca12aaf039\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.1_be444fbbcdaca3d034e3fd2da2321136e89efb12\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\design\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.0.1_6715935a8286414e46fe0ef22dd6fab1dae17ef1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.1_588d4726ade066ac77f71eb741882966224b6f3b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.0.1_c6bd5b30584de3bf2ea418b66cf0a1b93aac20c9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="98c4b7e3279d1283d405b87c93c5c02bf28bf1a8">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_d353d7fc99d031d04625b9f35dbfba9bf0846752\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.1_f3f28d0bacee9a9f82747a4fc3d5c6820779bf46\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.1_26f4bd3c45a19cbd835f6f2681b69abf8758ebba\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_fbd9f983d59024641c7b983b43ad6c1d2b16a088\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delon\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="C:\Users\delon\Desktop\Quiz2\Quiz Final\ArithmeticUpdate\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_8653410b83b45b9de8535766f434d3572998e90a\classes.dex" />
     </item>
 
 </items>

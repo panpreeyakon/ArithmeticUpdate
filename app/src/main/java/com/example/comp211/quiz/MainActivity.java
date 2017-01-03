@@ -186,22 +186,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(k);
             }
         });
-/*
-        registering.setOnClickListener(new View.OnClickListener() {
+
+        instructions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent k = new Intent(SingleQuiz.this, Instructions.class);
+                Intent k = new Intent(MainActivity.this, Instructions.class);
                 startActivity(k);
             }
         });
 
-        aboutUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent k = new Intent(SingleQuiz.this, AboutUs.class);
-                startActivity(k);
-            }
-        }); */
     }
 
 
