@@ -25,7 +25,10 @@ public class Instructions extends AppCompatActivity {
 
         // adding the text for instructions in the java code because the text will be fairly long
         // alternatively could be added into separate xml resource or the string.xml
-        instructions.setText("");
+        instructions.setText("Singleplayer Mode: Challenge yourself and try to reach the top of the" +
+                "Leaderboard!\nMultiplayer Mode: This is a Pass & Play Challenge. Enter your names " +
+                "and the fun will begin. Look out in the top line to see who\'s turn it is.\n" +
+                "Leaderboard: Hall of Fame for all Arithmeticians");
 
 
         //if click button

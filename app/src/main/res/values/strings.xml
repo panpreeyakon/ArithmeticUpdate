@@ -31,5 +31,7 @@
     <string name="mpQuestions">%1$s\'s turn: Question %2$d of %3$d</string>
     <string name="mpAlertDialog">%1$s WON!!!</string>
     <string name="mpTieAlertDialog">You TIED!!!</string>
-    <string name="mpResults">%1$s: %2$d correct out of 10/n%3$s: %4$d correct out of 10</string>
+    <string name="mpResults">%1$s: %2$d correct out of 10\n%3$s: %4$d correct out of 10</string>
+
+    <string name="title_activity_instructions">Instructions</string>
 </resources>
