@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/questions_list_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.example.comp211.quiz.Questions_List_ActivityFragment"
+    tools:showIn="@layout/activity_questions__list_">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/q12rowLinearLayout">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="1"
+            android:id="@+id/q1"
+            android:layout_weight="1"
+            android:lines="2"
+            style="@android:style/Widget.Material.Button.Colored"
+            android:textColor="@color/button_text_color"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="2"
+            android:id="@+id/q2"
+            android:layout_weight="1"
+            android:lines="2"
+            style="@android:style/Widget.Material.Button.Colored"
+            android:textColor="@color/button_text_color"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/q34rowLinearLayout">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="3"
+            android:id="@+id/q3"
+            android:layout_weight="1"
+            android:lines="2"
+            style="@android:style/Widget.Material.Button.Colored"
+            android:textColor="@color/button_text_color"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="4"
+            android:id="@+id/q4"
+            android:layout_weight="1"
+            android:lines="2"
+            style="@android:style/Widget.Material.Button.Colored"
+            android:textColor="@color/button_text_color"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/q56rowLinearLayout">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="5"
+            android:id="@+id/q5"
+            android:layout_weight="1"
+            android:lines="2"
+            style="@android:style/Widget.Material.Button.Colored"
+            android:textColor="@color/button_text_color"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="6"
+            android:id="@+id/q6"
+            android:layout_weight="1"
+            android:lines="2"
+            style="@android:style/Widget.Material.Button.Colored"
+            android:textColor="@color/button_text_color"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/q78rowLinearLayout">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="7"
+            android:id="@+id/q7"
+            android:layout_weight="1"
+            android:lines="2"
+            style="@android:style/Widget.Material.Button.Colored"
+            android:textColor="@color/button_text_color"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="8"
+            android:id="@+id/q8"
+            android:layout_weight="1"
+            android:lines="2"
+            style="@android:style/Widget.Material.Button.Colored"
+            android:textColor="@color/button_text_color"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/q910rowLinearLayout">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="9"
+            android:id="@+id/q9"
+            android:layout_weight="1"
+            android:lines="2"
+            style="@android:style/Widget.Material.Button.Colored"
+            android:textColor="@color/button_text_color"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="10"
+            android:id="@+id/q10"
+            android:layout_weight="1"
+            android:lines="2"
+            style="@android:style/Widget.Material.Button.Colored"
+            android:textColor="@color/button_text_color"/>
+    </LinearLayout>
+
+
+</LinearLayout>

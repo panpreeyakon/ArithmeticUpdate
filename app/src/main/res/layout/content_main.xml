@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.comp211.quiz.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        app:srcCompat="@drawable/login"
+        android:id="@+id/imageView2"
+        android:gravity="center"
+        android:layout_weight="0.11" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Singleplayer Mode"
+        android:id="@+id/spQuiz"
+        android:textSize="20sp"
+        android:padding="20dp"
+        android:gravity="center"
+        android:outlineProvider="bounds"
+        android:background="#ff4081"
+        android:textColor="#ffffff"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Multiplayer Mode"
+        android:id="@+id/mpQuiz"
+        android:textSize="20sp"
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:outlineProvider="bounds"
+        android:background="#ff4081"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Leaderboard"
+        android:id="@+id/leaderboard"
+        android:textSize="20sp"
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:outlineProvider="bounds"
+        android:background="#ff4081"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Instructions"
+        android:id="@+id/instructionsButton"
+        android:textSize="20sp"
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:outlineProvider="bounds"
+        android:background="#ff4081"
+        android:textColor="#ffffff" />
+
+</LinearLayout>
+
+
