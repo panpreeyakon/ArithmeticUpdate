@@ -4,6 +4,10 @@ import android.app.Activity;
 
 /**
  * Created by delon on 28.12.2016.
+ *
+ * This class allows for saving of questions no, questions, answers and answer choices into one object
+ * This simplifies our life when handling different questions and we simply create question objects
+ * and use methods below to populate the Question database  in the class called Questioncreate.
  */
 
 public class Question extends Activity {
@@ -17,6 +21,7 @@ public class Question extends Activity {
 
     private String ANSWER;
 
+    // Constructor
     public Question() {
         ID = 0;
         QUESTION = "";
@@ -28,6 +33,7 @@ public class Question extends Activity {
 
     }
 
+    // Constructor with parameters
     public Question(String qUESTION, String aNSWER, String aNSA, String aNSB, String aNSC, String aNSD) {
         QUESTION = qUESTION;
         ANSA = aNSA;
@@ -39,6 +45,8 @@ public class Question extends Activity {
 
     }
 
+    // use these methods in other classes to access information about the questions, ie read the
+    // questions and set the button texts with the answer choices etc
     public int getID() {
         return ID;
     }
@@ -67,6 +75,7 @@ public class Question extends Activity {
         return ANSD;
     }
 
+    // the following methods allow for altering of ID, Questions, Answers and answer choices
     public void setID(int id) {
         ID = id;
     }

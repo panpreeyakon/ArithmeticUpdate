@@ -14,21 +14,19 @@ public class ScoreboardData extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "ScoreBoard";
     // --------------------- Table for Leaderboard ---------------------------------------
-    // tasks table name
+    // table name
     private static final String TABLE_SCORE = "score";
-    // tasks TAble columns
+    // Table columns
     private static final String USER_ID = "_id";
     private static final String USER_NAME = "name";
     private static final String USER_SCORE = "score";
-
-    // define database
-    private SQLiteDatabase dbase;
 
     // Constructor
     public ScoreboardData(Context context, int DATABASE_VERSION) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    // in the activity life-cycle this is called upon creation of the activity as the name suggests
     @Override
     public void onCreate(SQLiteDatabase db) {
         // create scoreboard table
@@ -39,6 +37,9 @@ public class ScoreboardData extends SQLiteOpenHelper {
         db.execSQL(CREATE_SCORE_TABLE);
     }
 
+    // if the database version changes. previously i used to manaually change the database version
+    // each time a new quiz was started to reset questions however, this was inefficient and I
+    // created a new method for resetting questions (by deleting the table) instead
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldV, int newV) {
         // Drop older table if existed
@@ -47,7 +48,7 @@ public class ScoreboardData extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-
+    // adding players into the leaderboard
     public int addPlayer(Player player)
     {
         ContentValues cv = new ContentValues();
@@ -59,6 +60,10 @@ public class ScoreboardData extends SQLiteOpenHelper {
         return (int) studentID;
     }
 
+    // get the player data from the table row i, given that the table has been ordered by score
+    // before. This is used when creating the leaderboard as we order the table in here and use the
+    // method in the Scoreboard.class to read the player data into a new array list and then display
+    // that array list (shown in the Scoreboard.class code)
     public Player getRowProductData(int i) {
         Player newPlayer = new Player();
         SQLiteDatabase db = getWritableDatabase();
@@ -70,6 +75,7 @@ public class ScoreboardData extends SQLiteOpenHelper {
         return newPlayer;
     }
 
+    // get the total number of rows
     public int numRows()
     {  int r;
         SQLiteDatabase db = getWritableDatabase();

@@ -40,6 +40,9 @@ public class Multiplayer extends AppCompatActivity {
     private QuestionCreate db;
     private List<Question> quesList;
 
+    // for score submission
+    ScoreboardData scoredb;
+
     private Animation shakeAnimation; // animation for incorrect guess
     private Handler handler;
     private LinearLayout quizLinearLayout; // layout that contains the quiz
@@ -204,16 +207,6 @@ public class Multiplayer extends AppCompatActivity {
                                 Multiplayer.this.getTheme()));
 
                 disableButtons(); // disable all guess Buttons
-                // answer is correct but quiz is not over
-                // load the next question after a 2-second delay
-                /*handler.postDelayed(
-                        new Runnable() {
-                            @Override
-                            public void run() {
-                                animate(true); // animate the flag off the screen
-                            }
-                        }, 2000); // 2000 milliseconds for 2-second delay
-                */
 
             }
             //if use cheat button and if use skip button needs to be included here
@@ -264,8 +257,12 @@ public class Multiplayer extends AppCompatActivity {
     };
 
     public void quizEnds() {
+        // creating a pop-up window upon end of quiz with interaction buttons for user
+        // also displays the result -- called AlertDialog
 
         AlertDialog.Builder display = new AlertDialog.Builder(Multiplayer.this);
+
+        //depending one which player got more correct answers, display the winner in the title
         if (correctAnswers1 > correctAnswers2)
             display.setTitle(getString(R.string.mpAlertDialog, player1));
         else if (correctAnswers1 < correctAnswers2)
@@ -273,11 +270,13 @@ public class Multiplayer extends AppCompatActivity {
         else
             display.setTitle(R.string.mpTieAlertDialog);
 
+        // display both players score
         display.setMessage(getString(R.string.mpResults, player1,
                 correctAnswers1,
                 player2,
                 correctAnswers2));
 
+        // if players want to replay, launch activity again sending original player names along
         display.setNegativeButton(R.string.reset_quiz, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,
                                         int id) {
@@ -290,7 +289,8 @@ public class Multiplayer extends AppCompatActivity {
                 }
         );
 
-        display.setPositiveButton(R.string.backToMenu, new DialogInterface.OnClickListener() {
+        // if players want to return to main menu
+        display.setNeutralButton(R.string.backToMenu, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog,
                                 int id) {
                 Intent f = new Intent(Multiplayer.this, MainActivity.class);
@@ -298,26 +298,28 @@ public class Multiplayer extends AppCompatActivity {
             }
         });
 
+        // add scores to leaderboard and view leaderboard
+        display.setPositiveButton(R.string.submitScore, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,
+                                        int id) {
+                        Player p1 = new Player(player1, correctAnswers1);
+                        Player p2 = new Player(player2, correctAnswers2);
+
+                        scoredb = new ScoreboardData(Multiplayer.this, 1);
+                        scoredb.addPlayer(p1);
+                        scoredb.addPlayer(p2);
+                        Intent intent = new Intent(Multiplayer.this, Scoreboard.class);
+                        startActivity(intent);
+                    }
+        });
 
         display.setCancelable(false);
-
-        //create alert dialog that was built
-        AlertDialog scorePopup = display.create();
-        scorePopup.show();
-
+        display.show();
     }
 
 
     // utility method that disables all answer Buttons
     private void disableButtons() {
-        /*
-        //for (int row = 0; row < guessRows; row++) {
-        for (int row = 0; row < 2; row++) {
-            LinearLayout guessRow = guessLinearLayouts[row];
-            for (int i = 0; i < guessRow.getChildCount(); i++)
-                guessRow.getChildAt(i).setEnabled(false);
-        }
-        */
         button1.setEnabled(false);
         button2.setEnabled(false);
         button3.setEnabled(false);

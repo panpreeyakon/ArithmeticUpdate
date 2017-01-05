@@ -13,6 +13,10 @@ import android.util.Log;
 
 /**
  * Created by delon on 28.12.2016.
+ *
+ * Class that manages the database containing the table with all questions.
+ * Since this is a Maths/Arithmetic quiz, all questions will be simply addition problems however
+ * the questions will all be randomly generated.
  */
 
 public class QuestionCreate extends SQLiteOpenHelper {
@@ -44,19 +48,24 @@ public class QuestionCreate extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Drop older table if existed
+        // this is empty so that nothing happens when the database is created/ called
         if (TableExists(db, TABLE_QUEST))
+            // checking if the table existed
             Log.d("Arith Question Database", "table exists");
     }
 
     // We will call this method to get a new table with new randomly generated questions
     public void resetQuestions() {
+        // get write access
         dbase = this.getWritableDatabase();
+
+        // simply log to check status of table
         if (TableExists(dbase, TABLE_QUEST))
             Log.d("resetQuestions method", "table exists");
+
         // delete existing table with questions if it exists
         dbase.execSQL("DROP TABLE IF EXISTS " + TABLE_QUEST);
-        // create question table
+        // create new question table
         String CREATE_QUIZ_TABLE = "CREATE TABLE " + TABLE_QUEST + " ( "
                 + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + KEY_QUESTION + " TEXT , "
@@ -66,26 +75,35 @@ public class QuestionCreate extends SQLiteOpenHelper {
                 + KEY_ANSC + " TEXT , "
                 + KEY_ANSD + " TEXT )";
         dbase.execSQL(CREATE_QUIZ_TABLE);
-        // dbase.close();
+        // use addQuestions() to populate table with new questions that are randomly generated
         addQuestions(dbase);
     }
 
     // generating all questions and saving into dbase
     private void addQuestions(SQLiteDatabase db) {
         int NUMBER_OF_QUESTIONS = 10;
+        // the code below generates 10 addition problems randomly
         for (int questNumber = 0; questNumber < NUMBER_OF_QUESTIONS; questNumber++){
             int randomNumber_1 = ThreadLocalRandom.current().nextInt(10, 100);
             int randomNumber_2 = ThreadLocalRandom.current().nextInt(10, 100);
             int sum = randomNumber_1 + randomNumber_2;
+            // this line below makes sure that we assign the correct answer to a differently
+            // positioned button each time randomly
             int fix = ThreadLocalRandom.current().nextInt(sum-2, sum+2);
             int answerA = fix - 1;
             int answerB = fix;
             int answerC = fix + 1;
             int answerD = fix + 2;
+            // use Question class to create a Question object with all the data for the question
             Question q1 = new Question(randomNumber_1 + " + " + randomNumber_2 + " = ?",
                     Integer.toString(sum), Integer.toString(answerA), Integer.toString(answerB),
                     Integer.toString(answerC), Integer.toString(answerD));
-            //this.addQuestion(q1);
+
+            // using this object and the methods from Question.class we insert these values
+            // into the table
+            // * the step of including a Question class may seem needless, however it is useful
+            // for other functions to have a Question class that allows access and an easy way to
+            // read and get questions* hence there is harm using it here as well for form
             ContentValues values = new ContentValues();
             values.put(KEY_QUESTION, q1.getQUESTION());
             values.put(KEY_ANSWER, q1.getANSWER());
@@ -98,6 +116,10 @@ public class QuestionCreate extends SQLiteOpenHelper {
         }
     }
 
+    // If database version upgrades, the table is reset. Used this method before writing the
+    // the resetQuestions() method in order to delete old questions upon a launch of a new quiz
+    // however the resetQuestions() approach is much simpler and involves one less parameter:
+    // the version number
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldV, int newV) {
         // Drop older table if existed
@@ -106,6 +128,7 @@ public class QuestionCreate extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    // same case as for onUpgrade()
     @Override
     public void onDowngrade(SQLiteDatabase db, int oldV, int newV) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_QUEST);
@@ -113,7 +136,9 @@ public class QuestionCreate extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-
+    //this method is used in both single quiz fragment and multiplayer to load the questions
+    // from the database table into a usable list<Question> so that those classes can read the
+    // questions
     public List<Question> getAllQuestions() {
 
         List<Question> questionList = new ArrayList<Question>();
@@ -122,7 +147,7 @@ public class QuestionCreate extends SQLiteOpenHelper {
 
         dbase = this.getReadableDatabase();
         Cursor cursor = dbase.rawQuery(selectQuery, null);
-        // looping through all rows and adding to list
+        // looping through all rows and adding them to list of questions
         if (cursor.moveToFirst()) {
             do {
                 Question frage = new Question();
@@ -143,6 +168,7 @@ public class QuestionCreate extends SQLiteOpenHelper {
         return questionList;
     }
 
+    //  check whether the table exists based on the table name
     public boolean TableExists(SQLiteDatabase db, String tableName) {
         if (tableName == null || db == null || !db.isOpen()) {
             return false;

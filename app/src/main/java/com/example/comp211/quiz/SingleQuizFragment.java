@@ -1,8 +1,6 @@
 package com.example.comp211.quiz;
 
-import java.security.SecureRandom;
 import java.util.List;
-
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.AlertDialog;
@@ -38,7 +36,6 @@ public class SingleQuizFragment extends Fragment {
     // for the question database
     private QuestionCreate db;
     private List<Question> quesList;
-    //int score = 0;
     int qid = 0, databaseVersion, jumpTo;
     private Question currentQ;
 
@@ -46,24 +43,14 @@ public class SingleQuizFragment extends Fragment {
     ScoreboardData scoredb;
     String nameID;
 
-    private List<String> fileNameList; // flag file names
-
-    //private Set<String> regionsSet; // world regions in current quiz
-    private List<String> quizQuestionList;
-    private String correctAnswer; // correct answer
     private int totalGuesses; // number of guesses made
     private int correctAnswers; // number of correct guesses
-    private int totalSkipped; // number of skipped questions
-    private int totalCheat; // number of times cheating and showing the answer
-    //private int guessRows; // number of rows displaying guess Buttons
-    private SecureRandom random; // used to randomize the quiz
     private Handler handler; // used to delay loading next question
     private Animation shakeAnimation; // animation for incorrect guess
 
     private LinearLayout quizLinearLayout; // layout that contains the quiz
     private TextView questionNumberTextView; // shows current question #
     private TextView mathsQuestionTextView; // displays a maths question
-    private LinearLayout[] guessLinearLayouts; // rows of answer Buttons
     private TextView answerTextView; // displays correct answer
     private Button button1, button2, button3, button4, button5, button6;
 
@@ -82,11 +69,7 @@ public class SingleQuizFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.single_quiz_fragment, container, false);
 
-        /*
-        fileNameList = new ArrayList<>();
-        random = new SecureRandom();
-        */
-
+        // used delaying actions later
         handler = new Handler();
 
         // load the shake animation that's used for incorrect answers
@@ -105,92 +88,71 @@ public class SingleQuizFragment extends Fragment {
         button6 = (Button) view.findViewById(R.id.button6);
         answerTextView = (TextView) view.findViewById(R.id.answerTextView);
 
-        //solveQuestionView = (ImageView) view.findViewById(R.id.solveQuestionView);
-        //guessLinearLayouts = new LinearLayout[2];
-        //guessLinearLayouts[0] = (LinearLayout) view.findViewById(R.id.row1LinearLayout);
-        //guessLinearLayouts[1] = (LinearLayout) view.findViewById(R.id.row2LinearLayout);
-        //answerTextView = (TextView) view.findViewById(R.id.answerTextView);
         button1.setOnClickListener(guessButtonListener);
         button2.setOnClickListener(guessButtonListener);
         button3.setOnClickListener(guessButtonListener);
         button4.setOnClickListener(guessButtonListener);
         button5.setOnClickListener(guessButtonListener);
         button6.setOnClickListener(guessButtonListener);
-        /*
-        // configure listeners for the guess Buttons
-        for (LinearLayout row : guessLinearLayouts) {
-            for (int column = 0; column < row.getChildCount(); column++) {
-                Button button = (Button) row.getChildAt(column);
-                button.setOnClickListener(guessButtonListener);
-            }
-        }
-        */
 
         return view; // return the fragment's view for display
     }
 
+    //Called once the quiz finished and before the new quiz is started
     public void resetQuiz() {
         correctAnswers = 0;
         totalGuesses = 0;
         questionTracker = new int[11];
-        //databaseVersion++;
-        //totalCheat = 0;
-        //totalSkipped = 0;
+
         qid = 0;
+
         db = new QuestionCreate(getActivity());  // my question bank class
+        // line below resets questions in the database to ensure new questions are used
         db.resetQuestions();
         quesList = db.getAllQuestions();  // this will fetch all questions
         Log.d(TAG, quesList.get(0).getANSWER());
-        /* add random questions into questionsList until we get NUMBER_OF_QUESTIONS (10)
-        for (int questionCounter = 1; questionCounter <= NUMBER_OF_QUESTIONS; questionCounter++) {
-            // code to create a question in String format
-            // String question = formula and make into string format
-            // append question into list
-            quizQuestionList.add(question);
-        }
-        */
+
         scoredb = new ScoreboardData(getActivity(),1);
 
         loadNextQuestion();
     }
 
+    // only used for Singleplayer mode where user is allowed to switch questions
+    // this is called when he does that and wants to switch to question i
     public void jumpToQuestion(int i) {
 
         qid = i - 1;
+        // load previous questions
         db = new QuestionCreate(getActivity());
-        scoredb = new ScoreboardData(getActivity(),1);
+        scoredb = new ScoreboardData(getActivity(), 1);
         quesList = db.getAllQuestions();  // this will fetch all questions
 
-        //if (questiontracker[i] == i)
-        //    loadNextQuestion();
-        //else {
-            qid = i - 1;
-            db = new QuestionCreate(getActivity());
-            scoredb = new ScoreboardData(getActivity(), 1);
-            quesList = db.getAllQuestions();  // this will fetch all questions
-            Log.d(TAG, quesList.get(0).getANSWER());
+        // checking the question that was pulled - used during developing code
+        Log.d(TAG, quesList.get(0).getANSWER());
 
 
-            questionNumberTextView.setText(getString(R.string.questions, (qid + 1), NUMBER_OF_QUESTIONS));
+        questionNumberTextView.setText(getString(R.string.questions, (qid + 1), NUMBER_OF_QUESTIONS));
 
-            answerTextView.setText(""); // clear answerTextView
-            currentQ = quesList.get(qid); // the current question
+        answerTextView.setText(""); // clear answerTextView
+        currentQ = quesList.get(qid); // the current question
 
-            // assign values to guess buttons
-            //for (int row = 0; row < guessRows; row++) {
-            mathsQuestionTextView.setText(currentQ.getQUESTION());
-            button1.setText(currentQ.getANSA());
-            button2.setText(currentQ.getANSB());
-            button3.setText(currentQ.getANSC());
-            button4.setText(currentQ.getANSD());
-            button5.setText("Cheat");
-            button6.setText("Skip");
-            enableButtons();
-        //}
+        // assign values to guess buttons
+        mathsQuestionTextView.setText(currentQ.getQUESTION());
+        button1.setText(currentQ.getANSA());
+        button2.setText(currentQ.getANSB());
+        button3.setText(currentQ.getANSC());
+        button4.setText(currentQ.getANSD());
+        button5.setText("Cheat");
+        button6.setText("Skip");
+        enableButtons();
+
     }
-    // after the user guesses a correct flag, load the next flag
+
+    // after the user hits a button during the quiz the next question is loaded
     private void loadNextQuestion() {
-        // set questionNumberTextView's text
+
+        // this boolean is true if all questions have already been answered by the user
+        // if true then the quizEnds() method is called to end the quiz and report the score
         boolean allquestionsanswered = questionTracker[1] == 1 &&
                 questionTracker[2] == 2 &&
                 questionTracker[3] == 3 &&
@@ -201,26 +163,30 @@ public class SingleQuizFragment extends Fragment {
                 questionTracker[8] == 8 &&
                 questionTracker[9] == 9 &&
                 questionTracker[10] == 10 ;
+
         if (allquestionsanswered)
             quizEnds();
-        else
+        else // if there are still unattempted/unanswered questions then the following code acts
+            // so that all questions are checked before quiz ends even if the user for example
+            // switches from q1 to q10, the - 10 allows that all questions are run through
             if (qid == 10) {
                 qid = qid - 10;
                 loadNextQuestion();
             }
+            // if the questions has been answered/attempted then skip it and call the method again
+            // using Recursion here
             else if (questionTracker[(qid+1)] == (qid + 1)) {
                 qid++;
                 loadNextQuestion();
             }
+            // else just execute the normal code to load the next question
             else {
-
                 questionNumberTextView.setText(getString(R.string.questions, (qid + 1), NUMBER_OF_QUESTIONS));
 
                 answerTextView.setText(""); // clear answerTextView
                 currentQ = quesList.get(qid); // the current question
 
                 // assign values to guess buttons
-                //for (int row = 0; row < guessRows; row++) {
                 mathsQuestionTextView.setText(currentQ.getQUESTION());
                 button1.setText(currentQ.getANSA());
                 button2.setText(currentQ.getANSB());
@@ -234,22 +200,7 @@ public class SingleQuizFragment extends Fragment {
 
         }
 
-            /* restore state */
             /*
-        // get file name of the next flag and remove it from the list
-        String nextQuestion = quizQuestionList.remove(0);
-        correctAnswer = nextQuestion; // update the correct answer
-        answerTextView.setText(""); // clear answerTextView
-
-        // display current question number
-        questionNumberTextView.setText(getString(
-                R.string.questions, (correctAnswers + 1), NUMBER_OF_QUESTIONS));
-
-        // extract the region from the next image's name
-        //String region = nextImage.substring(0, nextImage.indexOf('-'));
-
-        // use AssetManager to load next image from assets folder
-        //AssetManager assets = getActivity().getAssets();
 
         // get an InputStream to the asset representing the next flag
         // and try to use the InputStream
@@ -265,50 +216,11 @@ public class SingleQuizFragment extends Fragment {
         catch (IOException exception) {
             Log.e(TAG, "Error loading " + nextImage, exception);
         }
-
-        Collections.shuffle(fileNameList); // shuffle file names
-
-        // put the correct answer at the end of fileNameList
-        int correct = fileNameList.indexOf(correctAnswer);
-        fileNameList.add(fileNameList.remove(correct));
-
-        // add 2, 4, 6 or 8 guess Buttons based on the value of guessRows
-        //for (int row = 0; row < guessRows; row++) {
-        for (int row = 0; row < 2; row++) {
-                // place Buttons in currentTableRow
-                for (int column = 0;
-                     column < guessLinearLayouts[row].getChildCount();
-                     column++) {
-                    // get reference to Button to configure
-                    Button newGuessButton = (Button) guessLinearLayouts[row].getChildAt(column);
-                    newGuessButton.setEnabled(true);
-
-                    // get country name and set it as newGuessButton's text
-                    String filename = fileNameList.get((row * 2) + column);
-                    // get sample answers and display them
-                    newGuessButton.setText(getCountryName(filename));
-                }
-            }
-
-        // randomly replace one Button with the correct answer
-        //int row = random.nextInt(guessRows); // pick random row
-        int row = random.nextInt(2); // pick random row
-        int column = random.nextInt(2); // pick random column
-        LinearLayout randomRow = guessLinearLayouts[row]; // get the row
-        String countryName = getCountryName(correctAnswer);
-        ((Button) randomRow.getChildAt(column)).setText(countryName);#
         */
     }
 
-    /*
-    // parses the country flag file name and returns the country name
-    private String getCountryName(String name) {
-        return name.substring(name.indexOf('-') + 1).replace('_', ' ');
-    }
-    */
-
-    // animates the entire quizLinearLayout on or off screen
-    private void animate(boolean animateOut) {
+    // animates the entire quizLinearLayout off screen - used for when a question is attempted
+    private void animate() {
 
         // calculate center x and center y
         int centerX = (quizLinearLayout.getLeft() +
@@ -322,24 +234,19 @@ public class SingleQuizFragment extends Fragment {
 
         Animator animator;
 
-        // if the quizLinearLayout should animate out rather than in
-        if (animateOut) {
-            // create circular reveal animation
-            animator = ViewAnimationUtils.createCircularReveal(
-                    quizLinearLayout, centerX, centerY, radius, 0);
-            animator.addListener(
-                    new AnimatorListenerAdapter() {
-                        // called when the animation finishes
-                        @Override
-                        public void onAnimationEnd(Animator animation) {
-                            Log.d(TAG, "finishes first question");
-                        }
+        // create circular reveal animation
+        animator = ViewAnimationUtils.createCircularReveal(
+                quizLinearLayout, centerX, centerY, radius, 0);
+        animator.addListener(
+                new AnimatorListenerAdapter() {
+                    // called when the animation finishes
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        Log.d(TAG, "finishes first question");
                     }
-            );
-        } else { // if the quizLinearLayout should animate in
-            animator = ViewAnimationUtils.createCircularReveal(
-                    quizLinearLayout, centerX, centerY, 0, radius);
-        }
+                }
+        );
+
 
         animator.setDuration(500); // set animation duration to 500 ms
         animator.start(); // start the animation
@@ -368,20 +275,10 @@ public class SingleQuizFragment extends Fragment {
                                 getContext().getTheme()));
 
                 disableButtons(); // disable all guess Buttons
-                // answer is correct but quiz is not over
-                // load the next question after a 2-second delay
-                /*handler.postDelayed(
-                        new Runnable() {
-                            @Override
-                            public void run() {
-                                animate(true); // animate the flag off the screen
-                            }
-                        }, 2000); // 2000 milliseconds for 2-second delay
-                */
                 qid++;
 
             }
-            //if use cheat button and if use skip button needs to be included here
+            //if use cheat button
             else if (guess.equals("Cheat")) {
                 // display cheat message and answer in red
                 answerTextView.setText(getString(R.string.cheat, answer));
@@ -389,7 +286,7 @@ public class SingleQuizFragment extends Fragment {
                         R.color.incorrect_answer, getContext().getTheme()));
                 qid++;
             }
-
+            // if skip button is used
             else if (guess.equals("Skip")) {
                 // display "Why skip..." in red
                 answerTextView.setText(R.string.skip);
@@ -408,19 +305,25 @@ public class SingleQuizFragment extends Fragment {
                         R.color.incorrect_answer, getContext().getTheme()));
                 qid++;
             }
+
+            //using handler to delay the next action so user potentially has a quick second to
+            // review his mistake
             handler.postDelayed(
                     new Runnable() {
                         @Override
                         public void run() {
-                            animate(true);
+                            animate();
                         }
                     }, 1000); // 2000 milliseconds for 2-second delay
 
+            // using two handlers to coordinate both actions to happen at the same time
+            // animate takes 500ms so once it finished the quiz ends or next question is loaded
             handler.postDelayed(
                     new Runnable() {
                         @Override
                         public void run() {
-                            if (totalGuesses == NUMBER_OF_QUESTIONS)    // check if quiz ends ie all questions have been answered
+                            // check if quiz ends ie all questions have been answered
+                            if (totalGuesses == NUMBER_OF_QUESTIONS)
                                 quizEnds();
                             else
                                 loadNextQuestion();
@@ -430,6 +333,8 @@ public class SingleQuizFragment extends Fragment {
         }
     };
 
+    // method called when quiz ends - calls out a alertdialog that shows outcomes and allows for next
+    // actions like playing again or going back to main menu or saving the score
     public void quizEnds() {
 
         AlertDialog.Builder display = new AlertDialog.Builder(getContext());
@@ -438,6 +343,7 @@ public class SingleQuizFragment extends Fragment {
                 correctAnswers,
                 ((100 * correctAnswers) / (double) NUMBER_OF_QUESTIONS)));
 
+        // button for replay
         display.setNegativeButton(R.string.reset_quiz, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,
                                         int id) {
@@ -446,6 +352,7 @@ public class SingleQuizFragment extends Fragment {
                 }
         );
 
+        // button for going back to the main menu
         display.setNeutralButton(R.string.backToMenu, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog,
                                 int id) {
@@ -454,7 +361,7 @@ public class SingleQuizFragment extends Fragment {
             }
         });
 
-        // add score submission
+        // button for score submission and viewing the leaderboard
         display.setPositiveButton(R.string.submitScore, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,
                                         int id) {
@@ -465,32 +372,23 @@ public class SingleQuizFragment extends Fragment {
                     }
                 }
         );
-
+        // so that this alertdiagog will not dissapear unless a button selected
         display.setCancelable(false);
 
         //create alert dialog that was built
         AlertDialog scorePopup = display.create();
         scorePopup.show();
+
+        // if the user did not enter a proper name like "" then he wont be allowed to submit a score
         Button button = scorePopup.getButton(android.support.v7.app.AlertDialog.BUTTON_POSITIVE);
         if (nameID.equals("")) {
             button.setEnabled(false);
         }
-        // use FragmentManager to display the DialogFragment
-        //quizResults.setCancelable(false);
-        //quizResults.show(getFragmentManager(), "quiz results");
     }
 
 
     // utility method that disables all answer Buttons
     private void disableButtons() {
-        /*
-        //for (int row = 0; row < guessRows; row++) {
-        for (int row = 0; row < 2; row++) {
-            LinearLayout guessRow = guessLinearLayouts[row];
-            for (int i = 0; i < guessRow.getChildCount(); i++)
-                guessRow.getChildAt(i).setEnabled(false);
-        }
-        */
         button1.setEnabled(false);
         button2.setEnabled(false);
         button3.setEnabled(false);
@@ -509,71 +407,31 @@ public class SingleQuizFragment extends Fragment {
         button6.setEnabled(true);
     }
 
-
+    // method allowing us to pass the username from the activity down to this fragment
     public void getPlayerName(String username) {
         nameID = username;
         Log.d("getPlayerName", nameID);
     }
 
+    // for passing the questiontracker information to the activity
     public int[] sendQuestionTracker() {
         return questionTracker;
     }
 
+    // see above but for sending score to activity
     public int sendScore() {
         return correctAnswers;
     }
 
+    // method we use so that activity can pass score to fragment
     public void receiveScore(int score) {
         correctAnswers = score;
     }
 
+    // same as above but for receiving the questiontracker
     public void receiveQuestionTracker(int[] tracker) {
         questionTracker = tracker;
     }
 
-/*
-    public static class MyDialogFragment extends DialogFragment {
-
-        public static MyDialogFragment newInstance(int title) {
-            MyDialogFragment fm = new MyDialogFragment();
-            Bundle arguments = new Bundle();
-            arguments.putInt("title", title);
-            fm.setArguments(arguments);
-            return fm;
-        }
-
-        //DialogFragment quizResults = new DialogFragment() {
-            // create an AlertDialog and return it
-        @Override
-        public Dialog onCreateDialog(Bundle bundle) {
-            int title = getArguments().getInt("title");
-
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            // set a title
-            builder.setTitle(title);
-
-            // add an Icon
-            //builder.setIcon();
-
-            // set message
-            builder.setMessage(getString(R.string.results,
-                    totalGuesses,
-                    (1000 / (double) totalGuesses)));
-
-            // "Reset Quiz" Button
-            builder.setPositiveButton(R.string.reset_quiz,
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog,
-                                            int id) {
-                            getParentFragment().resetQuiz();
-                        }
-                    }
-            );
-
-            return builder.create(); // return the AlertDialog
-        }
-    };
-    }
-*/
 
 }

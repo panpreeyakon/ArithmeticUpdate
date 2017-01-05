@@ -16,7 +16,6 @@ import java.util.ArrayList;
 
 public class Scoreboard extends AppCompatActivity {
 
-    String myQuiz = "";
     Button returnToMenu;
     TextView leaderboardDescription;
     ScoreboardData db = new ScoreboardData(this, 1);
@@ -32,21 +31,14 @@ public class Scoreboard extends AppCompatActivity {
         returnToMenu = (Button) findViewById(R.id.bReturnToMenu);
         leaderboardDescription = (TextView) findViewById(R.id.leaderboardDescription);
 
-        // score bit
+        // display player names and score bit
         l = (LinearLayout) findViewById(R.id.outlineLinearScroll);
 
-        //Bundle extras = getIntent().getExtras();
-        //if (extras != null)
-        //    myQuiz = extras.getString("quiz");
-
+        // title
         leaderboardDescription.setText("Quiz Leaderboard");
+
+        //call method defined below
         loadLeaderboard();
-        /*
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.leaderboardFrag, outlineFrag);
-        fragmentTransaction.commit();
-        */
 
         //if click button
         returnToMenu.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +50,9 @@ public class Scoreboard extends AppCompatActivity {
         });
     }
 
+    // as explained in the ScoreboardData getRowProductData() method, this allows us to get a ranked
+    // leaderboard, read it into an array list and use that array list to set textviews for each
+    // player and hence display the leaderboard
     public void loadLeaderboard() {
 
 
@@ -77,13 +72,10 @@ public class Scoreboard extends AppCompatActivity {
             TextView scoreTV = new TextView(this);
 
             nameTV.setText(players.get(i).getName());
-            //nameTV.setPadding(0, 0, 35, 0);
             nameTV.setWidth(435);
             nameTV.setTextSize(20);
             scoreTV.setText(Integer.toString(players.get(i).getScore()));
             scoreTV.setTextSize(20);
-            //scoreTV.setPadding(0, 35, 0, 0);
-            //double roundOff = Math.round(products.get(i).getSellPrice() * 100.0) / 100.0;
 
             l2.addView(nameTV);
             l2.addView(scoreTV);
