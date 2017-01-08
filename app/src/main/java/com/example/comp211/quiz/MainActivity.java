@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 );
 
                 // add name submission and play
-                display.setPositiveButton(R.string.submitScore, new DialogInterface.OnClickListener() {
+                display.setPositiveButton(R.string.saveName, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,
                                                 int id) {
                                 String username = userInput.getText().toString();

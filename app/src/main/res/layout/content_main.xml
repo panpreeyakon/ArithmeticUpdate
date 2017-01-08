@@ -23,7 +23,7 @@
     <Button
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Singleplayer Mode"
+        android:text="Start Singleplayer"
         android:id="@+id/spQuiz"
         android:textSize="20sp"
         android:padding="20dp"
@@ -35,7 +35,7 @@
     <Button
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Multiplayer Mode"
+        android:text="Start Multiplayer"
         android:id="@+id/mpQuiz"
         android:textSize="20sp"
         android:padding="20dp"

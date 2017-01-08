@@ -17,6 +17,7 @@
     <string name="userScore">Score</string>
     <string name="backToMenu">Return to Menu</string>
     <string name="submitScore">Save Your Score</string>
+    <string name="saveName">Save Your Name</string>
 
 
     <string name="submitName">Register Your Name</string>
